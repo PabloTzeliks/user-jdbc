@@ -1,4 +1,9 @@
 package pablo.tzeliks.model.domain;
 
-public class Email {
+import pablo.tzeliks.exceptions.InvalidEmailException;
+
+public interface Email {
+
+    boolean validate(String email) throws InvalidEmailException;
+
 }

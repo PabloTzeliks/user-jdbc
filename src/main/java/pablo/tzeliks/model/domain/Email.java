@@ -6,6 +6,8 @@ import java.util.regex.Pattern;
 
 public class Email implements EmailInterface {
 
+    private String email;
+
     private static final String EMAIL_REGEX =
             "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
 
@@ -24,4 +26,11 @@ public class Email implements EmailInterface {
         return isValid(email);
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public String toString() {
+        return String.format("Email: %s", email);
+    }
 }

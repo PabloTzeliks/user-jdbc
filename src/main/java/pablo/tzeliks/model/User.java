@@ -5,22 +5,22 @@ import pablo.tzeliks.model.domain.Password;
 
 public class User {
 
-    private String nome;
+    private String name;
     private Email email;
     private Password password;
 
-    public User(String nome, Email email, Password password) {
-        this.nome = nome;
+    public User(String name, Email email, Password password) {
+        this.name = name;
         this.email = email;
         this.password = password;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Email getEmail() {

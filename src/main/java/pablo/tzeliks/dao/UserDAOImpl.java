@@ -129,10 +129,7 @@ public class UserDAOImpl implements UserDAO {
                 String emailDb = rs.getString("email");
                 String senhaDb = rs.getString("password");
 
-                Password password = null;
-                password = password.fromStored(senhaDb);
-
-                return new User(name, new Email(emailDb), password);
+                return new User(name, new Email(emailDb), new Password(senhaDb));
             }
         } catch (SQLException e) {
             throw new RuntimeException("An error occurred trying to search User: ", e);
@@ -152,10 +149,7 @@ public class UserDAOImpl implements UserDAO {
                 String emailDb = rs.getString("email");
                 String senhaDb = rs.getString("password");
 
-                Password password = null;
-                password = password.fromStored(senhaDb);
-
-                users.add(new User(name, new Email(emailDb), password));
+                users.add(new User(name, new Email(emailDb), new Password(senhaDb)));
             }
             return users;
         } catch (SQLException e) {

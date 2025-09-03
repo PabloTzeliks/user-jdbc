@@ -9,28 +9,19 @@ public class Password implements PasswordInterface {
 
     private final String password;
 
-    public Password(String password) {
-        this.password = password;
-    }
+    public Password(String rawPassword) {
 
-    public Password ofRaw(String rawPassword) {
         if (rawPassword == null) throw new InvalidPasswordException("Null password");
 
         if (!validate(rawPassword)) {
             throw new InvalidPasswordException("Invalid password, this password can not pass in the validation.");
         }
 
-        return new Password(rawPassword);
+        this.password = rawPassword;
     }
 
     public String forDatabase() {
         return password;
-    }
-
-    public Password fromStored(String stored) {
-        if (stored == null) throw new InvalidPasswordException("Null password");
-
-        return new Password(stored);
     }
 
     public boolean matchesStored(String stored) {

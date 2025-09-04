@@ -44,7 +44,7 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public void login(Email email, Password password) {
-        String sql = "SELECT password FROM users WHERE email = ?";
+        String sql = "SELECT name, email, password FROM users WHERE email = ?";
         try (Connection conn = getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
